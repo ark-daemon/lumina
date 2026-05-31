@@ -1,139 +1,57 @@
 <div align="center">
+  <img src="https://img.icons8.com/color/96/000000/color-palette.png" alt="Lumina Logo" width="80" />
+  <h1>Lumina</h1>
+  <p><strong>Extract beautiful, production-ready color palettes from any image. Instantly export to Tailwind, CSS, and Figma.</strong></p>
 
-# ✨ Lumina
-
-**Extract beautiful, production-ready color palettes from any image.**  
-Export instantly to Tailwind CSS, CSS Variables, OKLCH, and DTCG Figma Tokens.
-
-[![MIT License](https://img.shields.io/badge/license-MIT-6366f1?style=flat-square)](LICENSE)
-[![Vite](https://img.shields.io/badge/vite-8.x-646cff?style=flat-square&logo=vite&logoColor=white)](https://vite.dev)
-[![React](https://img.shields.io/badge/react-19-61dafb?style=flat-square&logo=react&logoColor=white)](https://react.dev)
-[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-v4-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-
+  <a href="https://lumina-colors.vercel.app/">
+    <img src="https://img.shields.io/badge/Live_Demo-lumina--colors.vercel.app-blue?style=for-the-badge&logo=vercel" alt="Live Demo" />
+  </a>
 </div>
 
----
+<br />
 
-## 🎬 Overview
+Lumina is an advanced, client-side color quantization tool built for modern web developers and designers. By dragging and dropping any image, Lumina instantly extracts a mathematically accurate dominant color palette and previews it across a real-world dashboard mockup.
 
-Lumina is a **100% client-side** color palette generator. Drop any image — a photograph, brand asset, or screenshot — and instantly receive a curated, WCAG-audited color palette with developer-ready export tokens.
-
-No backend. No uploads. No tracking. Every pixel stays in your browser.
+Built explicitly to showcase rigorous engineering, perceptual color spaces, and modern accessibility standards for the **OpenAI Codex** program.
 
 ---
 
 ## ✨ Premium Features
 
-### 🌊 Dynamic Ambient Background Glow
-The app background reacts to your image in real time. Lumina extracts the dominant color and casts a massive, animated, blurred radial glow behind the entire UI — making the experience feel alive and totally unique to every image you drop in.
-
-### 🎚️ Real-Time Palette Size Slider
-A sleek slider lets you dynamically adjust the number of extracted colors between **3 and 15** without re-uploading. ColorThief v3's `getPaletteSync` re-runs the quantization algorithm instantly on every change.
-
-### 🪄 Staggered Spring Animations
-Color swatches load in with staggered **spring physics** powered by Framer Motion. Each card has a hover micro-interaction with an animated "Click to copy hex" tooltip and a ✓ confirmation, all with contrast-aware text (black or white) computed via the WCAG luminance formula.
-
-### 🖥️ Live UI Playground
-A fully interactive mock finance dashboard (**FinDash**) that is automatically re-styled using your generated palette — buttons, cards, navbars, and icon backgrounds all update in real time. It proves your palette is genuinely usable in a real-world product context.
-
-### 🛡️ WCAG 2.1 Contrast Audit
-A built-in contrast checker evaluates every key UI pair in the playground (button text/background, card surface/text) against the **WCAG 2.1** standard and reports live pass/fail grades:
-- **AAA** ≥ 7:1 — Enhanced
-- **AA** ≥ 4.5:1 — Normal text
-- **AA Large** ≥ 3:1 — Large text only
-- **Fail** < 3:1
-
-### 📦 Developer-Ready Multi-Format Export
-
-| Tab | Output |
-|---|---|
-| **Tailwind** | Drop-in `tailwind.config.js` `colors: {}` block |
-| **CSS Vars** | `:root {}` custom properties |
-| **OKLCH** | Perceptually-uniform `oklch()` CSS values |
-| **JSON / Figma** | Flat key→hex object for Figma Tokens plugin |
-| **DTCG Download** | W3C Design Token Community Group `.json` file |
-
-All color names follow a clean, consistent **`lumina-1` → `lumina-N`** convention across every export format.
-
----
+- **WCAG 2.1 Contrast Checker**: Real-time algorithmic contrast auditing. Automatically tests the extracted colors against each other (text vs. background) and scores them with strict `AAA`, `AA`, `AA Large`, or `Fail` badges based on WCAG luminance formulas.
+- **DTCG Token JSON Export**: 1-click export of your palette as a W3C Design Token Community Group (DTCG) compliant JSON file, ready to be imported directly into Figma Tokens or Style Dictionary.
+- **Perceptual OKLCH Support**: Generates the exact perceptual OKLCH color space matrices for your palette, ensuring perfectly uniform lightness and chroma interpolation for CSS.
+- **Dynamic Ambient Background Glow**: The UI features an immersive, blurred radial glow that seamlessly transitions to match the dominant color of your uploaded image using Framer Motion.
+- **Debounced Extraction Engine**: Heavy color math is debounced off the main thread, resulting in a buttery-smooth range slider when adjusting the desired number of colors.
 
 ## 🛠️ Tech Stack
 
-| Technology | Role |
-|---|---|
-| [Vite](https://vite.dev) | Lightning-fast build tooling |
-| [React 19](https://react.dev) | UI component model |
-| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling via `@tailwindcss/vite` plugin |
-| [ColorThief v3](https://lokeshdhakar.com/projects/color-thief/) | Client-side color quantization from image pixels |
-| [Framer Motion](https://www.framer.com/motion/) | Spring animations and staggered transitions |
-| [Lucide React](https://lucide.dev) | Icon system |
-| TypeScript | Type-safe codebase throughout |
+- **React 18** (Vite)
+- **Tailwind CSS v4** (Utility-first styling & native CSS nesting)
+- **Framer Motion** (Fluid layout animations and dynamic presence)
+- **ColorThief v3** (Canvas-based color quantization)
+- **Lucide React** (Crisp vector iconography)
 
----
+## 🚀 Export Formats
 
-## 🚀 Getting Started
+Lumina supports 1-click copying to your clipboard in the following standardized formats:
+1. **Tailwind CSS** (Standard `extend: { colors: { ... } }` config)
+2. **CSS Variables** (`:root` definitions)
+3. **OKLCH** (Next-gen CSS color functions)
+4. **JSON / Figma** (Standardized key-value object)
 
-### Prerequisites
-- Node.js 18+
-- npm 9+
+## 💻 Local Development
 
-### Install & Run
+To run Lumina locally:
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/ark-daemon/lumina.git
 cd lumina
-
-# 2. Install dependencies
 npm install
-
-# 3. Start the development server
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Build for Production
-
-```bash
-npm run build
-npm run preview
-```
-
----
-
-## 📁 Project Structure
-
-```
-lumina/
-├── src/
-│   ├── components/
-│   │   ├── Dropzone.tsx        # Drag-and-drop image upload zone
-│   │   ├── PaletteViewer.tsx   # Animated swatch grid with copy-to-clipboard
-│   │   ├── Playground.tsx      # Live UI mock + WCAG contrast checker
-│   │   └── ExportPanel.tsx     # 4-tab code export + DTCG download
-│   ├── utils/
-│   │   └── colors.ts           # Color math: hex, OKLCH, luminance, WCAG ratio
-│   ├── App.tsx                 # Root layout, palette state, ambient glow
-│   └── main.tsx
-├── index.html
-├── vite.config.ts
-└── package.json
-```
-
----
-
-## 🧮 Color Science
-
-Lumina implements all color math from scratch in `src/utils/colors.ts`:
-
-- **WCAG Luminance** — Relative luminance via IEC 61966-2-1 gamma expansion
-- **Contrast Ratio** — `(L1 + 0.05) / (L2 + 0.05)` per WCAG 2.1 spec
-- **OKLCH Conversion** — Full OKLab matrix transform by [Björn Ottosson](https://bottosson.github.io/posts/oklab/) for perceptually uniform color space output
-- **DTCG Tokens** — W3C Design Token Community Group format with `$value`, `$type`, and `$description`
-
----
-
-## 📝 License
-
-[MIT](LICENSE) — built with ❤️ by [ark-daemon](https://github.com/ark-daemon)
+<br />
+<div align="center">
+  <sub>Built with ❤️ by ark-daemon</sub>
+</div>
