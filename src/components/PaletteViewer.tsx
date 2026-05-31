@@ -2,7 +2,8 @@ import React from 'react';
 import type { RGB } from '../utils/colors';
 import { rgbToHex, getContrastColor } from '../utils/colors';
 import { Check, Clipboard } from 'lucide-react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
 interface PaletteViewerProps {
   palette: RGB[];
