@@ -2,7 +2,7 @@ import React from 'react';
 import type { RGB } from '../utils/colors';
 import { rgbToHex, getContrastColor } from '../utils/colors';
 import { Check, Clipboard } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 interface PaletteViewerProps {
   palette: RGB[];
@@ -20,12 +20,12 @@ export const PaletteViewer: React.FC<PaletteViewerProps> = ({ palette }) => {
 
   if (!palette || palette.length === 0) return null;
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.07 } },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 24, scale: 0.92 },
     show: {
       opacity: 1, y: 0, scale: 1,
