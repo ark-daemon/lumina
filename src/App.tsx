@@ -41,12 +41,15 @@ function App() {
     }
   }
 
-  // Re-extract when slider changes and image is loaded
+  // Re-extract when slider changes and image is loaded (debounced to keep UI smooth)
   useEffect(() => {
     if (imageSrc && imgRef.current?.complete) {
-      extractColors()
+      const timer = setTimeout(() => {
+        extractColors()
+      }, 100)
+      return () => clearTimeout(timer)
     }
-  }, [colorCount])
+  }, [colorCount, imageSrc])
 
   // Cleanup object URL on unmount
   useEffect(() => {
