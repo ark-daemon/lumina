@@ -12,8 +12,6 @@
 
 Lumina is an advanced, client-side color quantization tool built for modern web developers and designers. By dragging and dropping any image, Lumina instantly extracts a mathematically accurate dominant color palette and previews it across a real-world dashboard mockup.
 
-Built explicitly to showcase rigorous engineering, perceptual color spaces, and modern accessibility standards for the **OpenAI Codex** program.
-
 ---
 
 ## ✨ Premium Features
